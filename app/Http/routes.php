@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('cms.index');
 });
+Route::get('/cms/show', function () {
+    return view('cms.show');
+});
+
