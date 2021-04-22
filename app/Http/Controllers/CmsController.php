@@ -11,11 +11,18 @@ use Illuminate\Support\Facades\DB;
 class CmsController extends Controller
 {
     protected $limit = 3;
-    public function index($value="") {
+
+    public function index() {
        $posts = Post::with('author')
        ->latestFirst()
        ->published()
        ->simplePaginate($this->limit);
        return view('cms.index', compact('posts'));
     }
+
+    public function show($id) {
+        $post = Post::findOrFail($id);
+        return view('cms.show', compact('post'));
+    }
+
 }

@@ -16,7 +16,8 @@ Route::get('/', [
     'as' => 'cms'
 ]);
 
-Route::get('/cms/show', function () {
-    return view('cms.show');
-});
+Route::get('/cms/{post}', [
+    'uses' => 'CmsController@show',
+    'as' => 'cms.show'
+]);
 

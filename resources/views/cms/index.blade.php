@@ -10,14 +10,14 @@
                 <article class="post-item">
                 @if ($value->image_url)
                     <div class="post-item-image">
-                        <a href="post.html">
+                        <a href="{{ route('cms.show', $value->id) }}">
                             <img src="{{ $value->image_url }}" alt="">
                         </a>
                     </div>
                 @endif
                     <div class="post-item-body">
                         <div class="padding-10">
-                            <h2><a href="post.html">{{ $value->title }}</a></h2>
+                            <h2><a href="{{ route('cms.show', $value->id) }}">{{ $value->title }}</a></h2>
                             <p>{{ $value->excerpt }}</p>
                         </div>
 
@@ -31,7 +31,7 @@
                                 </ul>
                             </div>
                             <div class="pull-right">
-                                <a href="post.html">Continue Reading &raquo;</a>
+                                <a href="{{ route('cms.show', $value->id) }}">Continue Reading &raquo;</a>
                             </div>
                         </div>
                     </div>
