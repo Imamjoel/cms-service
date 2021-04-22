@@ -20,9 +20,8 @@ class CmsController extends Controller
        return view('cms.index', compact('posts'));
     }
 
-    public function show($id) {
-        $post = Post::findOrFail($id);
-        return view('cms.show', compact('post'));
+    public function show(Post $post) {
+      return view('cms.show', compact('post'));
     }
 
 }
