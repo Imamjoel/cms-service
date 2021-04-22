@@ -12,7 +12,10 @@ class CmsController extends Controller
 {
     protected $limit = 3;
     public function index($value="") {
-       $posts = Post::with('author')->latestFirst()->simplePaginate($this->limit);
+       $posts = Post::with('author')
+       ->latestFirst()
+       ->published()
+       ->simplePaginate($this->limit);
        return view('cms.index', compact('posts'));
     }
 }

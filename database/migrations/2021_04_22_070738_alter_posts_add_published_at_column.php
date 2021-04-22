@@ -4,7 +4,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class AlterPostsAddPublishedAtColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+        Schema::table('posts', function (Blueprint $table) {
+           $table->timestamp('published_at')->nullable();
         });
     }
 
@@ -30,6 +25,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->dropColumn('published_at');
+        });
     }
 }

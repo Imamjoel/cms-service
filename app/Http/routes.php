@@ -13,6 +13,7 @@
 
 Route::get('/', [
     'uses' => 'CmsController@index',
+    'as' => 'cms'
 ]);
 
 Route::get('/cms/show', function () {

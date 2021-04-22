@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MyBlog | My Awesome Blog</title>
+    <title>CMS</title>
 
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
@@ -21,13 +21,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">MyBlog</a>
+              <a class="navbar-brand" href="#">CMS</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="the-navbar-collapse">
               <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#">Blog</a></li>
+                <li class="active"><a href="{{ route('cms') }}">Blog</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
               </ul>
