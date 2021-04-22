@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('cms.index');
-});
+Route::get('/', [
+    'uses' => 'CmsController@index',
+]);
+
 Route::get('/cms/show', function () {
     return view('cms.show');
 });
